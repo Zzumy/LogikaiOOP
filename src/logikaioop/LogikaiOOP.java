@@ -1,22 +1,36 @@
 package logikaioop;
 
-import java.util.Scanner;
-
 public class LogikaiOOP {
-
-    static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) {
-        Lada[] allitasok = new Lada[3];
+    
+    static Adatbeker be= new Adatbeker();
+    Lada[] allitasok = new Lada[3];
+    
+    public LogikaiOOP() {
         allitasok[0] = new Lada("Az 1. állítás!");
         allitasok[1] = new Lada("A 2. állítás!");
         allitasok[2] = new Lada("A 3. állítás!");
+    }
+    
+    public static void main(String[] args) {
+        new LogikaiOOP().feladat();
+    }
 
+    private void feladat() {
+        allitasKiir();
+        kerdez();
+    }
+
+    private void allitasKiir() {
         System.out.println("Leírás");
         for (Lada allitas : allitasok) {
             System.out.println(allitas.getAllitas());
         }
-        System.out.println("Melyik:");
-        System.out.println("A válasz jó | rossz");
     }
 
+    private void kerdez() {
+        System.out.print("Melyik:");
+        String szoveg= be.szovegBeker();
+        System.out.println("A válasz jó | rossz");
+    }
+        
 }
