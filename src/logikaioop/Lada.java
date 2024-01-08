@@ -8,15 +8,11 @@ public final class Lada {
     private boolean kincs;
 
     public Lada(String allitas) {
-        setAllitas(allitas);
-        setAnyag(anyag);
-        setKincs(kincs);
+        this(allitas, "nincs");
     }
 
     public Lada(String allitas, String anyag) {
-        setAllitas(allitas);
-        setAnyag(anyag);
-        setKincs(kincs);
+        this(allitas, anyag, false);
     }
 
     public Lada(String allitas, String anyag, boolean kincs) {
@@ -29,16 +25,16 @@ public final class Lada {
         return allitas;
     }
 
+    public void setAllitas(String allitas) {
+        this.allitas = allitas;
+    }
+
     public String getAnyag() {
         return anyag;
     }
 
     public boolean isKincs() {
         return kincs;
-    }
-
-    public void setAllitas(String allitas) {
-        this.allitas = allitas;
     }
 
     public void setAnyag(String anyag) {
@@ -50,15 +46,15 @@ public final class Lada {
     }
 
     @Override
+    public String toString() {
+        return "Lada{" + "allitas=" + allitas + ", anyag=" + anyag + ", kincs=" + kincs + '}';
+    }
+
+    @Override
     public int hashCode() {
         int hash = 3;
         hash = 97 * hash + Objects.hashCode(this.allitas);
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Lada{" + "allitas=" + allitas + ", anyag=" + anyag + ", kincs=" + kincs + '}';
     }
 
     @Override
@@ -73,13 +69,6 @@ public final class Lada {
             return false;
         }
         final Lada other = (Lada) obj;
-        if (this.kincs != other.kincs) {
-            return false;
-        }
-        if (!Objects.equals(this.allitas, other.allitas)) {
-            return false;
-        }
-        return Objects.equals(this.anyag, other.anyag);
+        return Objects.equals(this.allitas, other.allitas);
     }
-
 }

@@ -10,7 +10,7 @@ public class LogikaiOOP {
 
         System.out.println("Leírás");
         for (Lada allitas : allitasok) {
-            System.out.println(allitas);
+            System.out.println(allitas.getAllitas());
         }
         System.out.println("Melyik:");
         System.out.println("A válasz jó | rossz");
