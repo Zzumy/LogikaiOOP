@@ -17,7 +17,14 @@ public class LogikaiOOP {
             System.out.println(allitas.getAllitas());
         }
         System.out.println("Melyik:");
-        System.out.println("A válasz jó | rossz");
+        if (eredmenyjelzes(szoveg)) {
+            System.out.println("A válasz jó");
+        } else {
+            System.out.println("A válasz rossz");
+        }
     }
 
+    public boolean eredmenyjelzes(String valasz) {
+        return valasz.equals("sus");
+    }
 }
