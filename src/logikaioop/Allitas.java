@@ -3,30 +3,31 @@ package logikaioop;
 import java.util.Objects;
 
 public final class Allitas {
-    private String allitas;
+
+    private String szoveg;
 
     public Allitas(String allitas) {
-        setAllitas(allitas);
+        setSzoveg(allitas);
     }
 
-    public String getAllitas() {
-        return allitas;
+    public String getSzoveg() {
+        return szoveg;
     }
 
-    public void setAllitas(String allitas) {
-        this.allitas = allitas;
-    }
-
-    @Override
-    public String toString() {
-        return "Allitas{" + "allitas=" + allitas + '}';
+    public void setSzoveg(String allitas) {
+        this.szoveg = allitas;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.allitas);
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.szoveg);
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        return getSzoveg();
     }
 
     @Override
@@ -41,8 +42,6 @@ public final class Allitas {
             return false;
         }
         final Allitas other = (Allitas) obj;
-        return Objects.equals(this.allitas, other.allitas);
+        return Objects.equals(this.szoveg, other.szoveg);
     }
-    
-    
 }
