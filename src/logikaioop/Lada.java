@@ -65,6 +65,9 @@ public final class Lada {
         if (obj == null) {
             return false;
         }
+        if(obj instanceof String){
+            return obj.equals(this.getAnyag());
+        }
         if (getClass() != obj.getClass()) {
             return false;
         }
